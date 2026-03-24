@@ -67,7 +67,7 @@ static void handle_allocate_ipv4_address_status(
 
   size_t apn_len = strlen(apn);
   if (apn_len >= sizeof(amf_ip_allocation_response_p->apn)) {
-    OAILOG_ERROR(LOG_AMF_APP, "APN too long (%zu bytes), dropping IPv4 allocation response\n", apn_len);
+    OAILOG_ERROR(LOG_AMF_APP, "APN too long (%zu bytes), dropping IPv4v6 allocation response\n", apn_len);
     itti_free(ITTI_MSG_ORIGIN_ID(message_p), message_p);
     return;
   }
@@ -160,7 +160,7 @@ static void handle_allocate_ipv4v6_address_status(
 
   size_t apn_len = strlen(apn);
   if (apn_len >= sizeof(amf_ip_allocation_response_p->apn)) {
-    OAILOG_ERROR(LOG_AMF_APP,"APN too long (%zu bytes), dropping IPv4v6 allocation response\n",apn_len);
+    OAILOG_ERROR(LOG_AMF_APP, "APN too long (%zu bytes), dropping IPv4v6 allocation response\n", apn_len);
     itti_free(ITTI_MSG_ORIGIN_ID(message_p), message_p);
     return;
   }
